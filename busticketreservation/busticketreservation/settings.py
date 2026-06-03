@@ -21,6 +21,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-fallback-key-for-dev-
 DEBUG = os.environ.get('RENDER', False) == False 
 
 # Allow Vercel to talk to Render (You can restrict this to your specific Vercel URL later)
+# NO https:// here. The asterisk is a wildcard allowing all host headers.
+ALLOWED_HOSTS = ['*'] 
+
+# MUST have https:// here.
 CSRF_TRUSTED_ORIGINS = ['https://havan-bus-booking-engine.onrender.com']
 
 
